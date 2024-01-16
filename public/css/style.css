@@ -1,0 +1,120 @@
+*{
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #F6F6F6 !important;
+}
+
+.navbar{
+    margin-bottom: 2rem !important;
+}
+
+.create-post{
+    margin-top: 6.5rem !important;
+}
+
+.container{
+    width: 55% !important;
+    background-color: white;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.profilePhoto{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.user{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nameUser{
+    font-size: 1.4rem;
+    margin-top: 5.5px;
+}
+
+.post-container .title{
+ font-size: 1.3rem;
+ font-weight: bolder;
+ padding-top: 12px;
+}
+
+.buttons-actions{
+    padding-top: 0.5rem;
+    display: flex;
+    gap: 1.2rem;
+}
+
+.profile{
+    transform: translateY(8px);
+}
+
+#post-input{
+    margin-left: .5rem;
+    width: 90%;
+    border-radius: 7px;
+    border: none;
+    background-color: #F1F1F1;
+    height: 2rem;
+}
+
+#post-input::placeholder{
+    color: #B3B3B3;
+    padding-left: 0.3rem;
+}
+
+.modal-header{
+    border: none !important;
+}
+
+.modal-footer{
+    border: none !important;
+}
+
+ul{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+ul .like{
+    cursor: pointer;
+    padding: 0px 5px 0px 5px;
+}
+
+ul .like img{
+    width: 16px;
+    height: 16px;
+}
+
+ul .like:hover{
+    background-color: #E6E6E6;
+    border-radius: 100%;
+}
+
+ul .comment{
+    cursor: pointer;
+    padding: 0px 5px 0px 5px;
+}
+
+ul .comment:hover{
+    background-color: #E6E6E6;
+    border-radius: 100%;
+}
+
+ul .share{
+    cursor: pointer;
+}
+
+ul .share:hover{
+    background-color: #E6E6E6;
+    border-radius: 100%;
+}
