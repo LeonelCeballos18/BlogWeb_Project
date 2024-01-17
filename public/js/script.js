@@ -17,7 +17,15 @@ $(document).ready(function () {
         }
         likeCount.text(newLikes + " Likes");
     });
-    $('.commentButton').click(function (){
-        
+    $('.shareButton').click(function (){
+        let shared = $(this).data('post-shared');
+        let img = $(this).find("img");
+        if(!shared){
+            $(this).data('post-shared', true);
+            img.attr("src", "img/shared.png");
+        }else{
+            $(this).data('post-shared', false);
+            img.attr("src", "img/share.png");
+        }
     })
 });

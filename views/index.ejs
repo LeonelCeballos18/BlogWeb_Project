@@ -35,11 +35,11 @@
             <div class="post"><p><%= post.body %></p></div>
             <ul class="buttons-actions">
                 <li class="like likeButton" data-post-id="<%= post.id %>" data-post-liked="<%= liked %>"><img src="img/heart.svg" class="likeImg" alt="" data-post-id="<%= post.id %>"></li>
-                <li class="comment commentButton"><img src="img/comment.svg" alt=""></li>
-                <li class="share shareButton"><img src="img/share.svg" alt=""></li>
+                <li class="share shareButton" data-post-id="<%= post.id %>" data-post-shared="<%= shared %>"><img src="img/share.png" alt=""></li>
             </ul> 
             <br>
             <p id="likeCount<%= post.id %>"><%= Math.floor(Math.random()*50+1); %> Likes</p>
+            </div>
         </div>
     </div>
     <% }); %>

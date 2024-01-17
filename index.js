@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 const postsUrl = "https://jsonplaceholder.typicode.com/posts";
 const usersUrl = "https://jsonplaceholder.typicode.com/users";
+const commentsUrl = "https://jsonplaceholder.typicode.com/comments";
 
 const TemporaryUser = {
     id : "11",
@@ -31,9 +32,15 @@ app.get("/", async (req, res)=>{
             console.error("Can not get the users", userResponse.status, userResponse.statusText);
         }
 
+        const commentsResponse = await fetch(commentsUrl);
+        if(!commentsResponse.ok){
+            console.error("Can not get the comments", commentsResponse.status, commentsResponse.statusText);
+        }
+
         //json convertion
         const posts =  await postResponse.json();
         const users = await userResponse.json();
+        const comments = await commentsResponse.json();
 
         //association users to posts
         const postsUsers = posts.map(post =>{
@@ -47,7 +54,7 @@ app.get("/", async (req, res)=>{
             const randomIndex = Math.floor(Math.random()*((totalPosts - 1) - 0 + 1) + 0);
             randomTakenPosts.push(postsUsers[randomIndex])
         }
-        res.render("index.ejs", {posts : randomTakenPosts, liked : false});
+        res.render("index.ejs", {posts : randomTakenPosts, liked : false, shared : false});
     } catch{
         console.error("Error", error.message)
     }
@@ -64,7 +71,7 @@ app.post('/submit', function(req, res){
         body : postText
     }
     randomTakenPosts.unshift(newPost);
-    res.render("index.ejs", {posts : randomTakenPosts, liked : false});
+    res.render("index.ejs", {posts : randomTakenPosts, liked : false, shared : false});
 })
 
 app.listen(port)

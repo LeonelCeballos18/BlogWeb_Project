@@ -90,22 +90,7 @@ ul .like{
     padding: 0px 5px 0px 5px;
 }
 
-ul .like img{
-    width: 16px;
-    height: 16px;
-}
-
 ul .like:hover{
-    background-color: #E6E6E6;
-    border-radius: 100%;
-}
-
-ul .comment{
-    cursor: pointer;
-    padding: 0px 5px 0px 5px;
-}
-
-ul .comment:hover{
     background-color: #E6E6E6;
     border-radius: 100%;
 }
@@ -117,4 +102,9 @@ ul .share{
 ul .share:hover{
     background-color: #E6E6E6;
     border-radius: 100%;
+}
+
+ul li img{
+    width: 16px;
+    height: 16px;
 }
