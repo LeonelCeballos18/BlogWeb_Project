@@ -14,7 +14,7 @@ const TemporaryUser = {
 }
 const randomTakenPosts = [];
 let cont = 1;
-
+let newPost;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended:true }));
 app.set('view engine', 'ejs');
@@ -64,14 +64,14 @@ app.post('/submit', function(req, res){
     cont++;
     let title = req.body["title"];
     let postText = req.body["post"];
-    let newPost = {
+    newPost = {
         user : TemporaryUser,
         id : 100 + cont,
         title : title,
         body : postText
     }
     randomTakenPosts.unshift(newPost);
-    res.render("index.ejs", {posts : randomTakenPosts, liked : false, shared : false});
+    res.redirect("/");
 })
 
 app.listen(port)
